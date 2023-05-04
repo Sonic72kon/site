@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<style>
+@font-face {
+    font-family: "comfortaa";
+    src: url("C:\negr/comfortaa-bold.otf");
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ книги</title>
+	<style>
+		body {
+			background-color: transparent; /* fff0de */
+		}
+		h1 {
+			font-size: 35px;
+			font-family: "comfortaa", sans-serif;
+			text-align: center;
+			margin-top: 50px;
+			margin-bottom: 20px;
+			color: #bc803d;
+		}
+		label {
+			display: block;
+			font-size: 16px;
+			font-family: "comfortaa", sans-serif;
+			margin-bottom: 5px;
+			color: #bc803d;
+		}
+		input[type="text"] {
+			background-color: #eed6ba;
+			width: 100%;
+			padding: 8px;
+			border: 2.5px solid #bc803d;
+			border-radius: 10px;
+			border-color: #d69d56;
+			font-size: 16px;
+			font-family: "comfortaa", sans-serif;
+			color: #976b2d;
+			margin-bottom: 15px;
+			box-sizing: border-box;
+		}
+		input:focus {
+			border-color: #b37d33;
+		}
+		.error {
+			color: red;
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
+		button[type="submit"] {
+			background-color: #b37d33;
+			color: #ffffff;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 20px;
+			font-size: 16px;
+			font-family: "comfortaa", sans-serif;
+			cursor: pointer;
+			transition: background-color 0.5s ease;
+			display: block;
+			margin: 0 auto;
+		}
+		button[type="submit"]:hover {
+			background-color: transparent;
+			color: #b37d33;
+			font-family: "comfortaa", sans-serif;
+			border: 1px solid #b37d33;
+		}
+		.success {
+			color: #d69d56;
+			font-size: 14px;
+			font-family: "comfortaa", sans-serif;
+			margin-top: 35px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Заказ книги</h1>
+	<form action="#" method="post">
+		<label for="book_name">Название книги</label>
+		<input type="text" id="book_name" name="book_name" maxlength="100" required>
+		<div id="book_name_error" class="error"></div>
+		<label for="book_author">Автор</label>
+		<input type="text" id="book_author" name="book_author" maxlength="100" required>
+		<div id="book_author_error" class="error"></div>
+		<button type="submit" style="background-color: <?php echo $_GET['color']; ?>">Заказать</button>
+		<div class="success">Заказ выполняется в течение 24 часов, но мы работаем очень быстро!!<br>Также не все книги вы можете заказать, так как некоторые книги могут отсутствовать у нашего поставщика. Мы сообщим, если желаемой вами книги не нашлось</div>
+	</form>
+    <div id="error-message"></div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <script>
+    	order.addEventListener("click", () => {
+			function submitForm() {
+            var bookName = document.getElementById("book-name").value;
+            var bookAuthor = document.getElementById("book-author").value;
+
+            // Проверка длины введенных данных
+            if (bookName.length > 255) {
+                document.getElementById("book-name").style.borderColor = "red";
+                document.getElementById("error-message").innerHTML = "Слишком длинное название книги";
+                return;
+            }
+            if (bookAuthor.length > 255) {
+            	document.getElementById("book-author").style.borderColor = "red";
+				document.getElementById("error-message").innerHTML = "Слишком длинное название автора";
+            	return;
+            }
+		}});
+        
+
+            // Отправка заказа на сервер
+            // ...
+    </script>
+</body>
+</html>
