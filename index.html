@@ -77,6 +77,7 @@
 			text-align: center;
 		}
 	</style>
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
 	<h1>Заказ книги</h1>
@@ -90,8 +91,6 @@
 		<div class="success">Заказ выполняется в течение 24 часов, но мы работаем очень быстро!!<br>Также не все книги вы можете заказать, так как некоторые книги могут отсутствовать у нашего поставщика. Мы сообщим, если желаемой вами книги не нашлось</div>
 	</form>
 
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
     <script>
     	let tg = window.Telegram.WebApp;
     	order.addEventListener("click", () => {
@@ -104,6 +103,7 @@
 				author: bookAuthor
 			}
 			tg.sendData(JSON.stringify(data));
+			alert('no way!');
 			tg.close();
 		}});
     </script>
