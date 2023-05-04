@@ -79,15 +79,14 @@
 	</style>
 </head>
 <body>
-	<h1 id="order">Заказ книги</h1>
+	<h1>Заказ книги</h1>
 	<form action="#" method="post">
 		<label for="book_name">Название книги</label>
 		<input type="text" id="book_name" name="book_name" maxlength="100" required>
 		<div id="book_name_error" class="error"></div>
 		<label for="book_author">Автор</label>
 		<input type="text" id="book_author" name="book_author" maxlength="100" required>
-		<div id="book_author_error" class="error"></div>
-		<button type="submit" style="background-color: <?php echo $_GET['color']; ?>">Заказать</button>
+		<button id="order" type="submit" style="background-color: <?php echo $_GET['color']; ?>">Заказать</button>
 		<div class="success">Заказ выполняется в течение 24 часов, но мы работаем очень быстро!!<br>Также не все книги вы можете заказать, так как некоторые книги могут отсутствовать у нашего поставщика. Мы сообщим, если желаемой вами книги не нашлось</div>
 	</form>
 
