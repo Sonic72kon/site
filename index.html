@@ -97,25 +97,16 @@
     <script>
     	order.addEventListener("click", () => {
 			function submitForm() {
-            var bookName = document.getElementById("book-name").value;
-            var bookAuthor = document.getElementById("book-author").value;
+            let bookName = document.getElementById("book-name").value;
+            let bookAuthor = document.getElementById("book-author").value;
 
-            // Проверка длины введенных данных
-            if (bookName.length > 255) {
-                document.getElementById("book-name").style.borderColor = "red";
-                document.getElementById("error-message").innerHTML = "Слишком длинное название книги";
-                return;
-            }
-            if (bookAuthor.length > 255) {
-            	document.getElementById("book-author").style.borderColor = "red";
-				document.getElementById("error-message").innerHTML = "Слишком длинное название автора";
-            	return;
-            }
+			let date = {
+				name: bookName,
+				author: bookAuthor
+			}
+			tg.sendDate(JSON.stringify(data));
+            tg.close();
 		}});
-        
-
-            // Отправка заказа на сервер
-            // ...
     </script>
 </body>
 </html>
