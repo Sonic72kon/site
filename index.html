@@ -79,7 +79,7 @@
 	</style>
 </head>
 <body>
-	<h1>Заказ книги</h1>
+	<h1 id="order">Заказ книги</h1>
 	<form action="#" method="post">
 		<label for="book_name">Название книги</label>
 		<input type="text" id="book_name" name="book_name" maxlength="100" required>
@@ -90,7 +90,6 @@
 		<button type="submit" style="background-color: <?php echo $_GET['color']; ?>">Заказать</button>
 		<div class="success">Заказ выполняется в течение 24 часов, но мы работаем очень быстро!!<br>Также не все книги вы можете заказать, так как некоторые книги могут отсутствовать у нашего поставщика. Мы сообщим, если желаемой вами книги не нашлось</div>
 	</form>
-    <div id="error-message"></div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
