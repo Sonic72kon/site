@@ -94,7 +94,6 @@
     <script>
     	let tg = window.Telegram.WebApp;
     	order.addEventListener("click", () => {
-			function submitForm() {
             let bookName = document.getElementById("book-name").value;
             let bookAuthor = document.getElementById("book-author").value;
 
@@ -103,9 +102,8 @@
 				author: bookAuthor
 			}
 			tg.sendData(JSON.stringify(data));
-			alert('no way!');
 			tg.close();
-		}});
+		});
     </script>
 </body>
 </html>
