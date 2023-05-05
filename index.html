@@ -45,6 +45,11 @@
 		input:focus {
 			border-color: #b37d33;
 		}
+		.error {
+			color: red;
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
 		button[type="submit"] {
 			background-color: #b37d33;
 			color: #ffffff;
@@ -86,42 +91,9 @@
 	<script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
     	let tg = window.Telegram.WebApp;
-    	window.onload = function() {
-        let orderBtn = document.getElementById("order");
-        let bookName = document.getElementById("book-name");
-        let bookAuthor = document.getElementById("book-author");
-
-        function toggleButton() {
-            if (bookName.value !== "" && bookAuthor.value !== "") {
-            	orderBtn.style.backgroundColor = "#b37d33";
-				orderBtn.style.cursor = "pointer";
-				orderBtn.disabled = false;
-
-				orderBtn.addEventListener("mouseover", function() {
-				  orderBtn.style.backgroundColor = "transparent";
-				  orderBtn.style.color = "#b37d33";
-				});
-
-				orderBtn.addEventListener("mouseout", function() {
-				  orderBtn.style.backgroundColor = "#b37d33";
-				  orderBtn.style.color = "#ffffff";
-				});
-            } else {
-                orderBtn.style.backgroundColor = "#dddddd";
-                orderBtn.style.cursor = "not-allowed";
-                orderBtn.disabled = true;
-            }
-        }
-
-        toggleButton();
-
-        bookName.addEventListener("input", toggleButton);
-        bookAuthor.addEventListener("input", toggleButton);
-    }
     	order.addEventListener("click", () => {
             let bookName = document.getElementById("book-name").value;
             let bookAuthor = document.getElementById("book-author").value;
-
 			let data = {
 				name: bookName,
 				author: bookAuthor
