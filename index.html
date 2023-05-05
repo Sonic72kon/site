@@ -143,6 +143,24 @@ window.onload = function() {
 			tg.sendData(JSON.stringify(data));
 			tg.close();
 		});
+		const TelegramBot = require('telegram-bot-api');
+
+		// создание нового бота с использованием токена бота
+		const api = new TelegramBot({
+			token: '6125427725:AAERmaSX25HD7J5jfQMTyGukEO01nN9NFpU',
+		});
+
+		// отправка сообщения пользователю с указанным chat_id
+		api.sendMessage({
+			chat_id: '1657591024',
+			text: 'Hello, world!',
+		})
+		.then((message) => {
+			console.log(message);
+		})
+		.catch((err) => {
+			console.log(err);
+		});
     </script>
 </body>
 </html>
