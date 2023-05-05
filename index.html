@@ -58,7 +58,12 @@
 			display: block;
 			margin: 0 auto;
 		}
-		button[type="submit"]:hover,
+		button[type="submit"]:hover {
+			background-color: transparent;
+			color: #b37d33;
+			font-family: "comfortaa", sans-serif;
+			border: 1px solid #b37d33;
+		}
 		button[type="submit"]:active {
 			background-color: transparent;
 			color: #b37d33;
@@ -81,7 +86,7 @@
 		<input type="text" id="book-name" name="book-name" maxlength="100" required>
 		<label for="book-author">Автор</label>
 		<input type="text" id="book-author" name="book-author" maxlength="100" required>
-		<button id="order" type="submit">Заказать</button>
+		<button id="order" type="submit" style="background-color: <?php echo $_GET['color']; ?>">Заказать</button>
 		<div class="success">Заказ выполняется в течение 24 часов, но мы работаем очень быстро!!<br>Также не все книги вы можете заказать, так как некоторые книги могут отсутствовать у нашего поставщика. Мы сообщим, если желаемой вами книги не нашлось.</div>
 	</form>
 	<script src="https://telegram.org/js/telegram-web-app.js"></script>
